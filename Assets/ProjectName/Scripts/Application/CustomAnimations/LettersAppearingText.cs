@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UILayer.CustomAnimations
+namespace ApplicationLayer.CustomAnimations
 {
     /// <summary>
     /// Display each character of an UI text one by one.

@@ -8,7 +8,7 @@ namespace ApplicationLayer.CustomAnimations
     /// <summary>
     /// Display each character of an UI text one by one.
     /// </summary>
-    public class LettersAppearingText : MonoBehaviour, ICustomAnimation
+    public class LettersAppearingText : MonoBehaviour, IRunnable
     {
         [SerializeField]
         private Text displayText = null;
@@ -19,17 +19,22 @@ namespace ApplicationLayer.CustomAnimations
         [SerializeField, Range(0.01f, 10f), Tooltip("How long does it take to show all the characters.")]
         private float displayTime = 1f;
 
+        public bool IsRunning { get; private set; }
+
         private Coroutine animateCoroutine = null;
 
-        public void StartAnimation()
+        public void Run()
         {
             animateCoroutine = StartCoroutine(AnimateCoroutine());
+            IsRunning = true;
         }
 
-        public void StopAnimation ()
+        public void Stop ()
         {
             if (animateCoroutine != null)
                 StopCoroutine(animateCoroutine);
+
+            IsRunning = false;
         }
 
         protected virtual IEnumerator AnimateCoroutine()

@@ -8,7 +8,7 @@ namespace ApplicationLayer.InputDetectors
     /// <summary>
     /// Detect user swipe on a device's screen.
     /// </summary>
-    public abstract class OnScreenSwipeDetector : MonoBehaviour
+    public abstract class OnScreenSwipeDetector : MonoBehaviour, IRunnable
     {
         #region Define structures
 
@@ -80,12 +80,12 @@ namespace ApplicationLayer.InputDetectors
 
         protected abstract void DetectSwipe();
 
-        public void StopDetection ()
+        public void Stop ()
         {
             IsRunning = false;
         }
 
-        public void RunDetection ()
+        public void Run ()
         {
             IsRunning = true;
         }

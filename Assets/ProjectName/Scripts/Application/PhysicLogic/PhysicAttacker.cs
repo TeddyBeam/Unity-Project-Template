@@ -13,8 +13,8 @@ namespace ApplicationLayer.PhysicLogic
         [SerializeField, Tooltip("This parameter will be sent to the victim when a physic event is triggered.")]
         protected T physicParam = default(T);
 
-        [SerializeField]
-        private bool useTags = false;
+        //[SerializeField]
+        //private bool useTags = false;
 
         //[SerializeField]
         //private List<string> attackableTags;
